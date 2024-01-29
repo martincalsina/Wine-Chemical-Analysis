@@ -1,6 +1,7 @@
-from flask import Flask, send_file
+from flask import Flask
 import requests
 from io import BytesIO
+import os
 
 app = Flask(__name__)
 
@@ -9,8 +10,10 @@ def download_csv():
 
     api_url = "https://storage.googleapis.com/the_public_bucket/wine-clustering.csv"
 
-    download_path = "C:/Users/marti/Cosas de Martin/Desafíos/Wine-Chemical-Analysis/data/wine-clustering.csv"
+    script_dir = os.path.dirname(os.path.realpath(__file__))
 
+    download_path = os.path.join(script_dir, "data", "wine-clustering.csv")
+    
     response = requests.get(api_url)
 
     if response.status_code == 200:
