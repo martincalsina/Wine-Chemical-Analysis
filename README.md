@@ -58,6 +58,8 @@ jupyter notebook --ip 0.0.0.0 --no-browser --allow-root
 
 4. Access to the generated hyperlink
 
+It may look something like this
+
 ```bash
 http://localhost:8888/?token=f3a8354eb82c92f5a12399fe1835bf8f31275f917928c8d2
 ```
