@@ -66,7 +66,7 @@ http://localhost:8888/?token=f3a8354eb82c92f5a12399fe1835bf8f31275f917928c8d2
 
 ![docker_jupyter_access](docker_jupyter_access.png)
 
-It will redirect you to Jupyter Notebook, then you only need to select the `Wine_Analysis.ipynb` file to start running the analysis.
+It will redirect you to Jupyter Notebook, then you only need to select the `Wine_Analysis.ipynb` file to start running the analysis. The Dockerfile is set to automatically start running the Flask web server, which is used in one cell of the notebook to download the dataset. Just be sure that you have both `5000` and `8000` ports available.
 
 ### Run manually
 
@@ -88,7 +88,7 @@ python load_data.py
 
 in the repository directory.
 
-This will run Flask web server in port `5000` to get the get the `wine-clustering.csv` dataset and save it into the `data/` folder using the `/donwload_csv` endpoint with a `GET` HTTP request. Be sure that the `data/` folder exists. If you manually downloaded or pulled it from this repository, you could skip this step.
+This will run Flask web server in port `5000` to get the `wine-clustering.csv` dataset and save it into the `data/` folder using the `/donwload_csv` endpoint with a `GET` HTTP request (it is the only method that this .py has). Be sure that the `data/` folder exists. If you manually downloaded or pulled it from this repository, you could skip this step.
 
 Then, you can start to execute the `Wine_Analysis.ipynb` Notebook in Jupyter or your IDE of preference.
 
